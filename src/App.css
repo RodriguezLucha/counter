@@ -5,7 +5,7 @@
   grid-template-areas:
     "counter"
     "button-house";
-  grid-template-rows: 90vh 10vh;
+  grid-template-rows: 90vh 1fr;
 }
 
 .counter {
