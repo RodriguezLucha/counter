@@ -5,12 +5,11 @@
   grid-template-areas:
     "counter"
     "button-house";
-  grid-template-rows: 90vh 1fr;
 }
 
 .counter {
   grid-area: counter;
-  font-size: 70vh;
+  font-size: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
