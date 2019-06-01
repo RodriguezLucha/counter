@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import './Button.css';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import Icon from '@material-ui/core/Icon';
 
 export default class App extends Component {
 
@@ -9,6 +12,8 @@ export default class App extends Component {
     this.state = {
       counter: 0
     };
+
+
   }
   increment(){
     this.setState({counter: this.state.counter + 1});
@@ -24,18 +29,22 @@ export default class App extends Component {
   }
 
   render(){
+    
     return (
       <div className="App" onClick={() => this.increment()}>
         <div className="counter" >
-          {this.state.counter}
+          { this.state.counter}
         </div>
         <div className='button-house'>
-          <button className="button" onClick={(e) => this.resetCounter(e)}>
-            Reset
-          </button>
-          <button className="button" onClick={(e) => this.decrement(e)}>
-            -
-          </button>
+          <Fab size="large" color="secondary" aria-label="decrement" onClick={(e) => this.decrement(e)}>
+            <Icon>remove_icon</Icon>
+          </Fab>
+          <Fab size="large" aria-label="Reset" onClick={(e) => this.resetCounter(e)}>
+            <Icon>replay_icon</Icon>
+          </Fab>
+          <Fab size="large" color="primary" aria-label="increment" onClick={() => this.increment()}>
+            <AddIcon />
+          </Fab>
         </div>
       </div>
     );
